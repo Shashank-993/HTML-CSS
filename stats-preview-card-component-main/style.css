@@ -1,0 +1,140 @@
+:root {
+  --fs-heading: clamp(1.375rem, 1.1rem + 1.4vw, 2rem);       /* 22px -> 32px */
+  --fs-body: clamp(0.9375rem, 0.875rem + 0.3vw, 1.0625rem);  /* 15px -> 17px */
+  --fs-value: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);           /* stat numbers, 24px -> 32px */
+  --fs-small: clamp(0.6875rem, 0.65rem + 0.15vw, 0.8125rem); /* labels, 11px -> 13px */
+
+  --body-color: hsl(233, 47%, 7%);
+  --wrapper-color: hsl(244, 37%, 16%);
+  --span-color: hsl(277, 64%, 61%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: var(--body-color);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem; 
+  color: #fff;
+}
+
+.wrapper {
+  width: min(92%, 920px); 
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: var(--wrapper-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.inner-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  padding: clamp(1.75rem, 5vw, 3.5rem);
+  text-align: center;
+}
+
+.inner-1 h2 {
+  font-size: var(--fs-heading);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.inner-1 > p {
+  font-size: var(--fs-body);
+  color: hsla(0, 0%, 100%, 0.75);
+  line-height: 1.6;
+}
+
+span {
+  color: var(--span-color);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;  
+}
+
+.info div {
+  width: 100%; 
+}
+
+.info p:first-child {
+  font-size: var(--fs-value);
+  font-weight: 700;
+}
+
+.info .small {
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+.inner-2 {
+  width: 100%;
+  position: relative;
+}
+
+.inner-2 img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pink-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: hsla(300,100%,25%,0.4);
+}
+
+@media (min-width: 600px) {
+  .wrapper {
+    flex-direction: row;
+    align-items: stretch; /* equal-height columns so the image fills the row */
+  }
+
+  .inner-1,
+  .inner-2 {
+    width: 50%;
+  }
+
+  .inner-1 {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .info {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  .info div {
+    width: auto;
+    text-align: left;
+  }
+
+  .inner-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* now it actually fills the stretched column */
+  }
+}
