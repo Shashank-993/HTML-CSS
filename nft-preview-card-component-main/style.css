@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fluid-20-32: clamp(1.25rem, 0.9494rem + 1.1673vw, 2rem);
+  --fluid-18-22: clamp(1.125rem, 1.0248rem + 0.3891vw, 1.375rem);
+}
+
+:root {
+  --body-color: hsl(217, 54%, 11%);
+  --wrapper-color: hsl(216, 50%, 16%);
+  --line-color: hsl(215, 32%, 27%);
+  --custom-white: hsl(0, 0%, 100%);
+  --cyan-blue: hsl(178, 100%, 50%);
+  --cyan-overlay: hsl(178, 100%, 40%);
+  --light-blue: hsl(215, 51%, 70%);
+}
+
+body,
+.wrapper,
+.content-div,
+.inner-1,
+.inner-2,
+.ethereum-div,
+.clock-div {
+  display: flex;
+}
+
+body,
+.wrapper,
+.content-div {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inner-1,
+.inner-2 {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ethereum-div,
+.clock-div {
+  gap: 0.5em;
+}
+
+.ethereum-div > p {
+  color: var(--cyan-blue);
+  font-weight: 700;
+}
+
+.clock-div,
+p {
+  color: var(--light-blue);
+}
+
+.inner-1 {
+  border-bottom: 1px solid var(--line-color);
+  padding-bottom: 1em;
+}
+
+h2 {
+  font-size: var(--fluid-20-32);
+}
+
+p {
+  font-size: var(--fluid-18-22);
+}
+
+body {
+  font-family: "Outfit";
+  background-color: var(--body-color);
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding-block: 4rem;
+}
+
+.img-div {
+  border-radius: 13px;
+  overflow: clip;
+  margin: 0 auto;
+  position: relative;
+  aspect-ratio: 1/1;
+}
+
+.equilibrium-image {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.active-div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-color: var(--cyan-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.wrapper {
+  border-radius: 13px;
+  background-color: var(--wrapper-color);
+  width: min(95%, 500px);
+  padding: 2em;
+  align-items: stretch;
+  container: card/inline-size;
+}
+
+h2,
+strong {
+  color: var(--custom-white);
+  font-weight: 700;
+}
+
+h2:hover,
+strong:hover {
+  color: var(--cyan-blue);
+  cursor: pointer;
+}
+
+.img-div:active,
+.img-div:hover .active-div {
+  opacity: 1;
+  cursor: pointer;
+}
