@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import "tailwindcss"
 *,
 *::after,
 *::before {
@@ -9,11 +9,33 @@
   font-family: Hanken Grotesk;
 }
 
-html {
-  font-size: 18px;
-}
-
 :root {
+   --fs--2: clamp(0.69rem, 0.67rem + 0.11vw, 0.76rem);
+  --fs--1: clamp(0.83rem, 0.79rem + 0.2vw, 0.95rem);
+  --fs-0: clamp(1rem, 0.93rem + 0.33vw, 1.19rem);
+  --fs-1: clamp(1.2rem, 1.1rem + 0.49vw, 1.48rem);
+  --fs-2: clamp(1.44rem, 1.3rem + 0.72vw, 1.86rem);
+  --fs-3: clamp(1.73rem, 1.52rem + 1.03vw, 2.32rem);
+  --fs-4: clamp(2.07rem, 1.79rem + 1.44vw, 2.9rem);
+  --fs-5: clamp(2.49rem, 2.09rem + 1.98vw, 3.62rem);
+
+  /* fluid space scale — named (t-shirt) sizes */
+  --space-3xs: clamp(0.25rem, 0.23rem + 0.08vw, 0.3rem);
+  --space-2xs: clamp(0.5rem, 0.47rem + 0.16vw, 0.59rem);
+  --space-xs: clamp(0.75rem, 0.7rem + 0.24vw, 0.89rem);
+  --space-s: clamp(1rem, 0.93rem + 0.33vw, 1.19rem);
+  --space-m: clamp(1.5rem, 1.4rem + 0.49vw, 1.78rem);
+  --space-l: clamp(2rem, 1.87rem + 0.65vw, 2.38rem);
+  --space-xl: clamp(3rem, 2.8rem + 0.98vw, 3.56rem);
+  --space-2xl: clamp(4rem, 3.74rem + 1.3vw, 4.75rem);
+  --space-3xl: clamp(6rem, 5.61rem + 1.96vw, 7.13rem);
+
+  /* one-up pairs — for transitional gaps/gutters that need to grow
+     faster than a single named step */
+  --space-s-m: clamp(1rem, 0.73rem + 1.36vw, 1.78rem);
+  --space-m-l: clamp(1.5rem, 1.2rem + 1.52vw, 2.38rem);
+  --space-l-xl: clamp(2rem, 1.46rem + 2.72vw, 3.56rem);
+  
   --Light-red: hsl(0, 100%, 67%);
   --Orangey-yellow: hsl(39, 100%, 56%);
   --Green-teal: hsl(166, 100%, 37%);
@@ -31,183 +53,52 @@ html {
   --Gray-blue: hsl(224, 30%, 27%);
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body, main {
   min-height: 100vh;
-  background-color: var(--Pale-blue);
 }
+
+main, .container, .score-div, .summary-div{
+  display: flex;
+}
+
 .container {
-  display: grid;
-  width: 700px;
-  grid-template-columns: 1fr 1fr;
-  max-width: 750px;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.result {
-  display: flex;
-  color: whitesmoke;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  background-image: linear-gradient(
-    to top,
-    var(--Light-royal-blue),
-    var(--Light-slate-blue)
-  );
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  padding: 2rem 0;
-  gap: 1rem;
-  z-index: 10;
-  /* transform: translateX(30px); */
 }
 
-.result .circle {
-  width: 185px;
-  height: 185px;
-  border-radius: 50%;
-  padding: 20px;
-  text-align: center;
-  background-image: linear-gradient(
-    to bottom,
-    var(--Violet-blue),
-    var(--Persian-blue)
-  );
-}
-
-.result .circle h1 {
-  font-size: 5rem;
-  margin-top: 0.2rem;
-  margin-bottom: 0;
-}
-.result .circle p {
-  margin-top: -20px;
-  font-weight: 200;
-}
-.result p {
-  text-align: center;
-  margin: 40px;
-  margin-top: -5px;
-  font-weight: 200;
-  margin-bottom: 0;
-}
-
-.summary {
-  z-index: 5;
-  display: flex;
+.score-div, .summary-div {
   flex-direction: column;
+}
+
+main {
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  padding: 20px 40px;
-  background-color: var(--White);
-  margin-left: -20px;
+} */
+
+.fc {
+  @apply flex flex-col;
 }
 
-.summary .summary-heading {
-  width: 100%;
-  text-align: left;
-  color: var(--Gray-blue);
-  margin-top: 14px;
-}
-.inner-container {
-  /* border: 2px solid blue; */
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 0.7rem;
+.fcc {
+  @apply flex flex-col items-center;
 }
 
-.stats {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  border-radius: 15px;
-  margin-left: 17px;
+.score-div {
+  background-image: linear-gradient(to bottom, var(--Light-slate-blue), var(--Light-royal-blue));
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  color: var(--White)
 }
 
-.btn {
-  background: none;
-  border: none;
-  outline: none;
-  border-radius: 40px;
-  padding: 15px 30px;
-  color: var(--White);
-  background-color: var(--Gray-blue);
-  width: 300px;
-  /* max-width: 250px; */
-  font-size: 1rem;
-  margin-left: 17px;
+.score {
+  padding: var(--space-l);
+  width:  170px;
+  height: 170px;
 }
 
-.stats h2 {
-  font-size: 1.2rem;
-  /* margin-left: -90px; */
-}
 
-.labels {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.red {
-  background-color: hsla(0, 100%, 67%, 0.092);
-  color: var(--Light-red);
-}
-
-.yellow {
-  background-color: hsl(39, 100%, 56%, 0.092);
-  color: var(--Orangey-yellow);
-}
-
-.green {
-  background-color: hsl(166, 100%, 37%, 0.092);
-  color: var(--Green-teal);
-}
-
-.blue {
-  background-color: hsl(234, 85%, 45%, 0.092);
-  color: var(--Cobalt-blue);
-}
-
-.bold {
-  color: var(--Gray-blue);
-  font-weight: 900;
-}
-.btn:hover {
-  opacity: 0.9;
-  cursor: pointer;
-}
-
-.stats > p {
-  color: var(--Gray-blue);
-  font-weight: 400;
-}
-@media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    /* max-width: 500px; */
-    width: 100%;
-    height: 100%;
-    /* margin-block: 2rem; */
-  }
-
-  .summary {
-    /* transform: translateY(-20px); */
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-  }
-  .result {
-    border-bottom-left-radius: 20px;
-    /* transform: translateY(15px); */
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-  }
-}

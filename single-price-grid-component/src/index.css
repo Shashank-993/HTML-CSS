@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* @link https://utopia.fyi/type/calculator?c=412,16,1.2,1440,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  /* Typo */
+  --fs--2: clamp(0.6944rem, 0.6521rem + 0.1643vw, 0.8rem);
+  --fs--1: clamp(0.8333rem, 0.7665rem + 0.2594vw, 1rem);
+  --fs-0: clamp(1rem, 0.8998rem + 0.3891vw, 1.25rem);
+  --fs-1: clamp(1.2rem, 1.0547rem + 0.5642vw, 1.5625rem);
+  --fs-2: clamp(1.44rem, 1.2344rem + 0.7986vw, 1.9531rem);
+  --fs-3: clamp(1.728rem, 1.4421rem + 1.1104vw, 2.4414rem);
+  --fs-4: clamp(2.0736rem, 1.6816rem + 1.5224vw, 3.0518rem);
+  --fs-5: clamp(2.4883rem, 1.9567rem + 2.0644vw, 3.8147rem);
+
+  /* Spacing */
+  --space-3xs: clamp(0.25rem, 0.225rem + 0.0973vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4499rem + 0.1946vw, 0.625rem);
+  --space-xs: clamp(0.75rem, 0.6749rem + 0.2918vw, 0.9375rem);
+  --space-s: clamp(1rem, 0.8998rem + 0.3891vw, 1.25rem);
+  --space-m: clamp(1.5rem, 1.3497rem + 0.5837vw, 1.875rem);
+  --space-l: clamp(2rem, 1.7996rem + 0.7782vw, 2.5rem);
+  --space-xl: clamp(3rem, 2.6994rem + 1.1673vw, 3.75rem);
+  --space-2xl: clamp(4rem, 3.5992rem + 1.5564vw, 5rem);
+  --space-3xl: clamp(6rem, 5.3988rem + 2.3346vw, 7.5rem);
+
+  /* Colors */
+  --teal-dark: hsl(179, 62%, 43%);
+  --light-teal: hsl(179, 62%, 47%);
+  --green: hsl(71, 73%, 54%);
+  --teal-light: hsl(204, 43%, 93%);
+  --gray: hsl(218, 22%, 67%);
+}
+
+* {
+    font-family: "Karla"
+}
+
+.fc {
+  @apply flex flex-col;
+}
+
+.f-center {
+  @apply flex justify-center items-center;
+}
+
+h3 {
+  font-size: var(--fs-1)
+}
+
+h3, button {
+    font-weight: 700;
+}
+
+p {
+    font-size: var(--fs--0)
+}
+
+.green-text {
+    color:var(--green)
+}

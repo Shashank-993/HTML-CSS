@@ -1,60 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles.css" />
-    <title>Frontend mentor | result-summary-card</title>
-  </head>
-  <body>
-    <section class="container">
-      <div class="result">
-        <h3>Your Result</h3>
-        <div class="circle">
-          <h1>76</h1>
-          <p>of 100</p>
-        </div>
-        <h2>Great</h2>
-        <p>
-          You scored higher than 65% of <br />
-          the people who have taken <br />
-          these tests.
-        </p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Document</title>
+
+</head>
+<body class="h-screen min-h-screen">
+  <main class="h-full flex justify-center items-center">
+    <section class="flex flex-col grow h-full md:flex-row md:grow-0 md:h-auto md:w-auto">
+      <!-- Score div -->
+     <div class="score-div grow flex flex-col items-center justify-around text-center md:rounded-4xl md:gap-(--space-l)">
+      <h3 class="text-(length:--fs-1)">Your result</h3>
+      <div class="score flex flex-col items-center border rounded-full">
+        <h1 class="text-(length:--fs-5) font-bold">76</h1>
+        <small>of 100</small>
       </div>
-      <div class="summary">
-        <h2 class="summary-heading">Summary</h2>
-        <div class="inner-container">
-          <div class="stats red">
-            <div class="labels">
-              <img src="./assets/images/icon-reaction.svg" alt="" />
-              <h2>Reaction</h2>
-            </div>
-            <p><span class="bold">80&nbsp;&nbsp;</span>/&nbsp;100</p>
-          </div>
-          <div class="stats yellow">
-            <div class="labels">
-              <img src="./assets/images/icon-memory.svg" alt="" />
-              <h2>Memory</h2>
-            </div>
-            <p><span class="bold">92&nbsp;&nbsp;</span>/&nbsp;100</p>
-          </div>
-          <div class="stats green">
-            <div class="labels">
-              <img src="./assets/images/icon-verbal.svg" alt="" />
-              <h2>Verbal</h2>
-            </div>
-            <p><span class="bold">61&nbsp;&nbsp;</span>/&nbsp;100</p>
-          </div>
-          <div class="stats blue">
-            <div class="labels">
-              <img src="./assets/images/icon-visual.svg" alt="" />
-              <h2>Visual</h2>
-            </div>
-            <p><span class="bold">73&nbsp;&nbsp;</span>/&nbsp;100</p>
-          </div>
-        </div>
-        <button class="btn">Continue</button>
+      <div class="score-text flex flex-col items-center text-center gap-(--space-2xs) w-full">
+        <h2 class="text-(length:--fs-2)">Great</h2>
+      <p class="text-(length:--fs-0) mx-auto w-[70%]">You score higher than 65% of the people who have taken these tests.</p>
+      </div>
+     </div>
+     <!-- Summary div -->
+      <div class="summary-div grow">
+        <h3 class="font-bold">Summary</h3>
       </div>
     </section>
-  </body>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</body>
 </html>
